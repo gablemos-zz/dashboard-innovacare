@@ -1,8 +1,6 @@
 'use strict';
 
-var DEFAULT_COLORS1 = ['#8e5ea2', '#f49f0a', '#efca08', '#00a6a6', '#bbdef0'];
-var DEFAULT_COLORS2 = ['#7fb7be', '#357266', '#dacc3e', '#bc2c1a', '#7d1538'];
-var DEFAULT_COLORS = ['#8e5ea2', '#357266', '#dacc3e', '#bc2c1a', '#7d1538'];
+var DEFAULT_COLORS = ['#8E5EA2', '#FF4A60', '#FF9E5E', '#696969', '#C0C0C0'];
 
 var ctx = document.getElementById('sintomas-chart').getContext('2d');
 new Chart(ctx, {
@@ -28,21 +26,19 @@ new Chart(ctx, {
 			animateScale: true,
 			animateRotate: true
 		},
+		cutoutPercentage: 80,
 		plugins: {
 			doughnutlabel: {
 				labels: [
 					{
 						text: '90',
 						font: {
-							size: '60',
-							family: 'Arial, Helvetica, sans-serif',
-							style: 'italic',
-							weight: 'bold'
+							size: '25'
 						},
-						color: '#bc2c1a'
+						color: 'grey'
 					}
 				]
-			}
+			},
 		}
 	}
 });
@@ -52,11 +48,11 @@ new Chart(ctx, {
 	type: 'doughnut',
 	data: {
 		datasets: [{
-			data: [90],
+			data: [10],
 			backgroundColor: DEFAULT_COLORS[1],
 			label: 'Dataset 1'
 		}],
-		labels: ['Encaminhados ao pronto atendimento']
+		labels: ['Encaminhados']
 	},
 	options: {
 		responsive: true,
@@ -71,18 +67,16 @@ new Chart(ctx, {
 			animateScale: true,
 			animateRotate: true
 		},
+		cutoutPercentage: 80,
 		plugins: {
 			doughnutlabel: {
 				labels: [
 					{
 						text: '10',
 						font: {
-							size: '60',
-							family: 'Arial, Helvetica, sans-serif',
-							style: 'italic',
-							weight: 'bold'
+							size: '25',
 						},
-						color: '#bc2c1a'
+						color: 'grey'
 					}
 				]
 			}
@@ -96,7 +90,7 @@ new Chart(ctx, {
 	data: {
 		datasets: [{
 			data: [100],
-			backgroundColor: DEFAULT_COLORS[2],
+			backgroundColor: DEFAULT_COLORS[3],
 			label: 'Dataset 1'
 		}],
 		labels: ['Total']
@@ -115,6 +109,8 @@ new Chart(ctx, {
 			animateScale: true,
 			animateRotate: true
 		},
+		cutoutPercentage: 70,
+		aspectRatio: 1,
 		plugins: {
 			doughnutlabel: {
 				labels: [
@@ -142,11 +138,11 @@ new Chart(ctx, {
 	type: 'doughnut',
 	data: {
 		datasets: [{
-			data: [100],
-			backgroundColor: DEFAULT_COLORS[0],
+			data: [90,10],
+			backgroundColor: [DEFAULT_COLORS[0], DEFAULT_COLORS[3]],
 			label: 'Dataset 1'
 		}],
-		labels: ['Taxa de sucesso']
+		labels: ['Taxa de sucesso', 'Outros']
 	},
 	options: {
 		responsive: true,
@@ -162,6 +158,8 @@ new Chart(ctx, {
 			animateScale: true,
 			animateRotate: true
 		},
+		cutoutPercentage: 70,		
+		aspectRatio: 1,
 		plugins: {
 			doughnutlabel: {
 				labels: [
@@ -195,23 +193,33 @@ var ctx = document.getElementById('visao-chart').getContext('2d');
 new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ["1900", "1950", "1999", "2050"],
+      labels: ["10", "11", "12", "13", "14", "15", "16"],
       datasets: [
         {
-          label: "Doença 1",
-          backgroundColor: "#3e95cd",
-          data: [133,221,783,2478]
+          label: "DOR",
+          backgroundColor: DEFAULT_COLORS[4],
+          data: [100,100,100,100,100,100,100]
         }, {
-          label: "Doença 2",
-          backgroundColor: "#8e5ea2",
-          data: [408,547,675,734]
+          label: "Mucosite",
+          backgroundColor: DEFAULT_COLORS[4],
+          data: [150,150,150,150,150,150,150]
+        }, {
+          label: "Diarreia",
+          backgroundColor: DEFAULT_COLORS[4],
+          data: [50,50,50,50,50,50,50]
         }
       ]
     },
     options: {
       title: {
-        display: true,
-        text: 'Teste'
-      }
+        display: false
+			},
+			scales: {				
+				yAxes: [{
+					ticks: {
+						beginAtZero: true
+					}
+				}]
+			}
     }
 });

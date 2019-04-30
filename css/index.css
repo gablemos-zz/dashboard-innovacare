@@ -38,10 +38,13 @@ a:hover, a:visited, a:link, a:active {
 }
 
 .btn-primary{
-    background-color: #229AD4
+    background-color: #229AD4;
 }
 
 .btn-danger{
     background-color: #FF4A60
 }
- 
+
+.lp-bt{
+    padding-bottom: 9%
+}

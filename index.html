@@ -9,315 +9,253 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Blank</title>
+  <title>Innovecare</title>
 
   <!-- Fonts-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
   <!-- Style-->
   <link href="vendor/sb-admin/css/sb-admin-2.min.css" rel="stylesheet">
-  <link href="css/index.css" rel="stylesheet">  
-
-  <!-- Bootstrap core JavaScript-->
+  <link href="css/index.css" rel="stylesheet">
+  <!-- JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Core plugin JavaScript-->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for all pages-->
   <script src="vendor/sb-admin/js/sb-admin-2.min.js"></script>
-
-  <!-- Page level plugins -->
-  <!-- <script src="vendor/chart.js/Chart.min.js"></script> -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.0/dist/Chart.min.js"></script>
-  <script src="vendor/chart.js/chartjs-plugin-doughnutlabel.js"></script>  
-
-  <!-- Text Fill plugins -->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+  <script src="vendor/chart.js/chartjs-plugin-doughnutlabel.js"></script>
   <script src="vendor/textfill/jquery.textfill.js"></script>
-
-
-
 </head>
 
 <body id="page-top" class=" bg-gray-100">
 
- 
-<!-- Topbar -->
-<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-    
+
+  <!-- Topbar -->
+  <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
     <div id="menu-botoes" class="bd-exemple">
-
-    <!-- Help -->
-    <button type="button" class="btn btn-light shadow first-last"><i class="fas fa-question"></i>
-    </button>
-
-    <!-- Protocolo -->
-    <button type="button" class="btn btn-danger shadow"><i class="fas fa-file-alt"></i><br>      
+      <!-- Help -->
+      <button type="button" class="btn btn-light shadow first-last"><i class="fas fa-question"></i>
+      </button>
+      <!-- Protocolo -->
+      <button type="button" class="btn btn-danger shadow"><i class="fas fa-file-alt"></i><br>
         <span>Protocolo</span>
-  </button>
+      </button>
+      <!-- Chat -->
+      <button type="button" class="btn btn-primary shadow"><i class="fas fa-comment-alt"></i>
+        <br><span>Chat</span>
+      </button>
+      <!-- Dashboard -->
+      <button type="button" class="btn btn-light shadow"><i class="fas fa-chart-line"></i>
+        <br><span>Dashboard</span>
+      </button>
+      <!-- Agenda -->
+      <button type="button" class="btn btn-light shadow"><i class="fas fa-calendar-alt"></i>
+        <br><span>Agenda</span>
+      </button>
+      <!-- Pacientes -->
+      <button type="button" class="btn btn-light shadow"><i class="fas fa-user-injured"></i>
+        <br><span>Pacientes</span>
+      </button>
+      <!-- Equipe Multidiciplinar -->
+      <button type="button" class="btn btn-light shadow"><i class="fas fa-user-md"></i>
+        <br><span>Equipe Multidiciplinar</span>
+      </button>
+      <!-- Planos de Saúde -->
+      <button type="button" class="btn btn-light shadow"><i class="fas fa-hospital"></i>
+        <br><span>Planos de Saúde</span>
+      </button>
+      <!-- Medicamentos -->
+      <button type="button" class="btn btn-light shadow"><i class="fas fa-capsules"></i>
+        <br><span>Medicamentos</span>
+      </button>
+      <!-- User -->
+      <button type="button" class="btn btn-light shadow"><i class="fas fa-user-circle"></i><br>
+        <span>teste@innovecare.com.br</span>
+      </button>
+      <!-- Sair -->
+      <button type="button" class="btn btn-light shadow first-last"><i class="fas fa-sign-out-alt"></i>
+      </button>
 
-    <!-- Chat -->
-    <button type="button" class="btn btn-primary shadow"><i class="fas fa-comment-alt"></i>
-      <br><span>Chat</span>
-    </button>
-
-    <!-- Dashboard -->
-    <button type="button" class="btn btn-light shadow"><i class="fas fa-chart-line"></i>
-      <br><span>Dashboard</span>
-    </button>
-
-    <!-- Agenda -->
-    <button type="button" class="btn btn-light shadow"><i class="fas fa-calendar-alt"></i>
-      <br><span>Agenda</span>
-    </button>
-
-    <!-- Pacientes -->
-    <button type="button" class="btn btn-light shadow"><i class="fas fa-user-injured"></i>
-      <br><span>Pacientes</span>
-    </button>
-
-    <!-- Equipe Multidiciplinar -->
-    <button type="button" class="btn btn-light shadow"><i class="fas fa-user-md"></i>
-      <br><span>Equipe Multidiciplinar</span>
-    </button>
-
-    <!-- Planos de Saúde -->
-    <button type="button" class="btn btn-light shadow"><i class="fas fa-hospital"></i>
-      <br><span>Planos de Saúde</span>
-    </button>
-
-    <!-- Medicamentos -->
-    <button type="button" class="btn btn-light shadow"><i class="fas fa-capsules"></i>
-      <br><span>Medicamentos</span>
-    </button>
-
-    <!-- User -->
-    <button type="button" class="btn btn-light shadow"><i class="fas fa-user-circle"></i><br>
-          <span>teste@innovecare.com.br</span>
-    </button>
-
-    <!-- Sair -->
-    <button type="button" class="btn btn-light shadow first-last"><i class="fas fa-sign-out-alt"></i>
-    </button>
-          
     </div>
-</nav>
-<!-- End of Topbar -->
-  
-<!-- Central -->
-<div class="container-fluid">
+  </nav>
+  <!-- End of Topbar -->
 
-  <div class="row">
-
-    <!-- Planos Ativos -->
-    <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-invisible shadow h-100 py-2">
-        <div class="card-body">
-          <div class="row no-gutters align-items-center">
-            <div class="col mr-2">
-
-              <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                <i class="fas fa-inbox fa-2x"></i>
-                Planos Ativos
-              </div>
-
-              <div class="row no-gutters align-items-center">
-
-                <div class="col-auto text-center lp-up">
-                  <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">250</div>
+  <!-- Central -->
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Planos Ativos -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-invisible shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                  <i class="fas fa-inbox fa-2x"></i>
+                  Planos Ativos
                 </div>
-
-                <div class="col text-center">
+                <div class="row no-gutters align-items-center">
+                  <div class="col-auto text-center lp-up">
+                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">250</div>
+                  </div>
+                  <div class="col text-center">
                     <span class="border-left-info"></span>
+                  </div>
                 </div>
-
+              </div>
+              <div class="col-auto text-center hp-up">
+                <i class="fas fa-arrow-up"></i>
+                13.8%
               </div>
             </div>
-
-            <div class="col-auto text-center hp-up">
-              <i class="fas fa-arrow-up"></i>
-              13.8%                 
-            </div>
-
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Pacientes -->
-    <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-invisible shadow h-100 py-2">
-        <div class="card-body">
-          <div class="row no-gutters align-items-center">
-            <div class="col mr-2">
-
-              <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                <i class="fas fa-user-injured fa-2x"></i>
-                Pacientes
-              </div>
-
-              <div class="row no-gutters align-items-center">
-
-                <div class="col-auto text-center lp-up">
-                  <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800 ">100</div>
+      <!-- Pacientes -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-invisible shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                  <i class="fas fa-user-injured fa-2x"></i>
+                  Pacientes
                 </div>
-
-                <div class="col text-center">
+                <div class="row no-gutters align-items-center">
+                  <div class="col-auto text-center lp-up">
+                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800 ">100</div>
+                  </div>
+                  <div class="col text-center">
                     <span class="border-left-info"></span>
+                  </div>
                 </div>
-
               </div>
-            </div>
-
-            <div class="col-auto text-center hp-up">
+              <div class="col-auto text-center hp-up">
                 <i class="fas fa-arrow-down"></i>
-                13.8%                 
-              </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Médicos -->
-    <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-invisible shadow h-100 py-2">
-        <div class="card-body">
-          <div class="row no-gutters align-items-center">
-            <div class="col mr-2">
-
-              <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                <i class="fas fa-user-md fa-2x"></i>
-                Médicos
-              </div>
-
-              <div class="row no-gutters align-items-center">
-
-                <div class="col-auto text-center lp-up">
-                  <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">15</div>
-                </div>
-
-                <div class="col text-center">
-                  <span class="border-left-info"></span>
-                </div>
-
+                13.8%
               </div>
             </div>
-
-            <div class="col-auto text-center hp-up">
-              <i class="fas fa-arrow-down"></i>
-              13.8%                 
-              </div>
-
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Agenda -->
-    <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-invisible shadow h-100 py-2">
-        <div class="card-body">
-          <div class="row no-gutters align-items-center">
-            <div class="col mr-2">
-
-              <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                <i class="fas fa-calendar-alt fa-2x"></i>
-                Agenda
-              </div>
-
-              <div class="row no-gutters align-items-center text-center">
-
-                <div class="col-auto lp-up">
-                  <div class="h6 mb-0 mr-3  text-gray-800">Hoje<br>21</div>
+      <!-- Médicos -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-invisible shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                  <i class="fas fa-user-md fa-2x"></i>
+                  Médicos
                 </div>
-
-                <div class="col text-center">
+                <div class="row no-gutters align-items-center">
+                  <div class="col-auto text-center lp-up">
+                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">15</div>
+                  </div>
+                  <div class="col text-center">
                     <span class="border-left-info"></span>
+                  </div>
                 </div>
-
+              </div>
+              <div class="col-auto text-center hp-up">
+                <i class="fas fa-arrow-down"></i>
+                13.8%
               </div>
             </div>
-
-            <div class="col-auto h6 mb-0 mr-3 text-gray-800 text-center agp-up">
-              Atrasado<br>3                
+          </div>
+        </div>
+      </div>
+      <!-- Agenda -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-invisible shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                  <i class="fas fa-calendar-alt fa-2x"></i>
+                  Agenda
+                </div>
+                <div class="row no-gutters align-items-center text-center">
+                  <div class="col-auto lp-up">
+                    <div class="h6 mb-0 mr-3  text-gray-800">Hoje<br>21</div>
+                  </div>
+                  <div class="col text-center">
+                    <span class="border-left-info"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto h6 mb-0 mr-3 text-gray-800 text-center agp-up">
+                Atrasado<br>3
+              </div>
             </div>
-
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<!-- Fim Central -->
+  <!-- Fim Central -->
 
-<!-- Gráfico Inferior -->
-<div class="container-fluid">
-
-  <div class="row">
-
-    <!-- Efeitos Colaterais -->
-    <div class="col-xl-6 col-md-6 mb-4">
-      <div class="card shadow mb-4">
-        
-        <div class="card-header py-3 text-center">
-          <h6 class="m-0 font-weight-bold text-primary">Efeitos Colaterais</h6>
-        </div>
-        
-        <div class="row">
-          <div class="col-xl-4">
-            <div class="col text-center"><span>Sintomas Manejados</span></div>
-            <div class="col">
-              <canvas id="sintomas-chart"></canvas>
-            </div>
-            <hr>
-            <div class="col text-center"><span>Encaminhados ao<br>Pronto atendimento</span></div>
-            <div class="col">
-                <canvas id="encaminhados-chart"></canvas>
-            </div>
+  <!-- Gráfico Inferior -->
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Efeitos Colaterais -->
+      <div class="col-xl-6 col-md-6 mb-4">
+        <div class="card shadow mb-4">
+          <div class="card-header py-3 text-center">
+            <h6 class="m-0 font-weight-bold text-primary">Efeitos Colaterais</h6>
           </div>
-          <div class="col-xl-8 align-items-center" style="border-left: 1px solid black;">
-            <div class="col">
-              <canvas id="total-chart"></canvas>
-            </div>
-            <div class="col">
-              <canvas id="sucesso-chart"></canvas>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-xl-4">
+                <div class="col text-center lp-bt"><span>Sintomas Manejados</span></div>
+                <div class="col">
+                  <canvas id="sintomas-chart"></canvas>
+                </div>
+                <hr>
+                <div class="col text-center lp-bt"><span>Encaminhados ao<br>Pronto atendimento</span></div>
+                <div class="col">
+                  <canvas id="encaminhados-chart"></canvas>
+                </div>
+              </div>
+              <div class="col-xl-8 " style="border-left: 1px solid black;">
+                <div class="row h-100">
+                  <div class="col-xl-6 my-auto">
+                    <canvas id="total-chart"></canvas>
+                  </div>
+                  <div class="col-xl-6 my-auto">
+                    <canvas id="sucesso-chart"></canvas>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Visão Geral dos Planos Terapêuticos -->
-    <div class="col-xl-6 col-md-6 mb-4">
-      
+      <!-- Visão Geral dos Planos Terapêuticos -->
+      <div class="col-xl-6 col-md-6 mb-4">
         <div class="card shadow mb-4">
           <div class="card-header py-3 text-center">
             <h6 class="m-0 font-weight-bold text-primary">Visão Geral dos Planos Terapêuticos</h6>
           </div>
-  
           <div class="card-body">
-            <div class="chart-bar">
+            <div class="">
               <canvas id="visao-chart"></canvas>
             </div>
           </div>
         </div>
       </div>
+    </div>
   </div>
-</div>
-<!-- Fim Gráfico Inferior -->
+  <!-- Fim Gráfico Inferior -->
 
 
 
 
-<!-- Scripts -->
-<script type="text/javascript"  src="js/indexTextFill.js"></script>  
-<script type="text/javascript"  src="js/demo/chart-area-demo.js"></script>
-<script type="text/javascript"  src="js/demo/chart-pie-demo.js"></script>
-<script type="text/javascript"  src="js/demo/chart-bar-demo.js"></script>
-<script type="text/javascript"  src="js/chart.js"></script>
+  <!-- Scripts -->
+  <script type="text/javascript" src="js/indexTextFill.js"></script>
+  <script type="text/javascript" src="js/chart.js"></script>
 
 </body>
 
