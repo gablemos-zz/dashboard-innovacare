@@ -12,77 +12,49 @@
   <title>Innovecare</title>
 
   <!-- Fonts-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="asset/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link
     href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
     rel="stylesheet">
+
   <!-- Style-->
-  <link href="vendor/sb-admin/css/sb-admin-2.min.css" rel="stylesheet">
-  <link href="css/index.css" rel="stylesheet">
+  <link  rel="stylesheet" type="text/css"href="css/bootstrap-reboot.min.css">
+  <link  rel="stylesheet" type="text/css"href="css/bootstrap.min.css">
+  <link  rel="stylesheet" type="text/css"href="css/bootstrap-grid.min.css">
+  <link  rel="stylesheet" type="text/css"href="css/sb-admin-2.min.css">
+  <link  rel="stylesheet" type="text/css"href="css/index.css">
+  <link  rel="stylesheet" type="text/css"href="css/slicknav.min.css">
+  <link  rel="stylesheet" type="text/css"href="css/navigation.css">
+
+
   <!-- JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="vendor/sb-admin/js/sb-admin-2.min.js"></script>
-  <script src="vendor/chart.js/Chart.min.js"></script>
-  <script src="vendor/chart.js/chartjs-plugin-doughnutlabel.js"></script>
-  <script src="vendor/textfill/jquery.textfill.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/Chart.min.js"></script>
+  <script src="js/chartjs-plugin-doughnutlabel.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/jquery.fittext.js"></script>
+  <script src="js/sb-admin-2.min.js"></script>
 </head>
 
 <body id="page-top" class=" bg-gray-100">
 
 
-  <!-- Topbar -->
-  <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-    <div id="menu-botoes" class="bd-exemple">
-      <!-- Help -->
-      <button type="button" class="btn btn-light shadow first-last"><i class="fas fa-question"></i>
-      </button>
-      <!-- Protocolo -->
-      <button type="button" class="btn btn-danger shadow"><i class="fas fa-file-alt"></i><br>
-        <span>Protocolo</span>
-      </button>
-      <!-- Chat -->
-      <button type="button" class="btn btn-primary shadow"><i class="fas fa-comment-alt"></i>
-        <br><span>Chat</span>
-      </button>
-      <!-- Dashboard -->
-      <button type="button" class="btn btn-light shadow"><i class="fas fa-chart-line"></i>
-        <br><span>Dashboard</span>
-      </button>
-      <!-- Agenda -->
-      <button type="button" class="btn btn-light shadow"><i class="fas fa-calendar-alt"></i>
-        <br><span>Agenda</span>
-      </button>
-      <!-- Pacientes -->
-      <button type="button" class="btn btn-light shadow"><i class="fas fa-user-injured"></i>
-        <br><span>Pacientes</span>
-      </button>
-      <!-- Equipe Multidiciplinar -->
-      <button type="button" class="btn btn-light shadow"><i class="fas fa-user-md"></i>
-        <br><span>Equipe Multidiciplinar</span>
-      </button>
-      <!-- Planos de Saúde -->
-      <button type="button" class="btn btn-light shadow"><i class="fas fa-hospital"></i>
-        <br><span>Planos de Saúde</span>
-      </button>
-      <!-- Medicamentos -->
-      <button type="button" class="btn btn-light shadow"><i class="fas fa-capsules"></i>
-        <br><span>Medicamentos</span>
-      </button>
-      <!-- User -->
-      <button type="button" class="btn btn-light shadow"><i class="fas fa-user-circle"></i><br>
-        <span>teste@innovecare.com.br</span>
-      </button>
-      <!-- Sair -->
-      <button type="button" class="btn btn-light shadow first-last"><i class="fas fa-sign-out-alt"></i>
-      </button>
-
-    </div>
-  </nav>
+  
   <!-- End of Topbar -->
-
+  <nav class="menu-navigation-icons navbar navbar-expand navbar-light bg-white mb-4 static-top shadow bd-exemple">
+      <a href="#" class="menu-grey" style="width: 55px;"><i class="fas fa-question"></i></a>
+      <a href="#" class="menu-blue"><i class="fas fa-file-alt"></i><span>Protocolo</span></a>
+      <a href="#" class="menu-red"><i class="fas fa-comment-alt"></i><span>Chat</span></a>
+      <a href="#" class="menu-grey"><i class="fas fa-chart-line"></i><span>Dashboard</span></a>
+      <a href="#" class="menu-grey"><i class="fas fa-calendar-alt"></i><span>Agenda</span></a>
+      <a href="#" class="menu-grey"><i class="fas fa-user-injured"></i><span>Pacientes</span></a>
+      <a href="#" class="menu-grey"><i class="fas fa-user-md"></i><span id="menu-equipe">Equipe Multidiciplinar</span></a>
+      <a href="#" class="menu-grey"><i class="fas fa-hospital"></i><span>Planos de Saúde</span></a>
+      <a href="#" class="menu-grey"><i class="fas fa-capsules"></i><span>Medicamentos</span></a>
+      <a href="#" class="menu-grey"><i class="fas fa-user-circle"></i><span id="menu-email">teste@innovecare.com.br</span></a>
+      <a href="#" class="menu-grey"  style="width: 55px;"><i class="fas fa-sign-out-alt"></i></a>
+  </nav>
   <!-- Central -->
   <div class="container-fluid">
     <div class="row">
@@ -254,8 +226,14 @@
 
 
   <!-- Scripts -->
-  <script type="text/javascript" src="js/indexTextFill.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
   <script type="text/javascript" src="js/chart.js"></script>
+  <script type="text/javascript" src="js/jquery.slicknav.min.js"></script>
+  <!-- <script>
+    $(function(){
+        $('.menu-navigation-icons').slicknav();
+    });
+  </script> -->
 
 </body>
 
