@@ -145,7 +145,8 @@ new Chart(ctx, {
 		labels: ['Taxa de sucesso', 'Outros']
 	},
 	options: {
-		responsive: true,
+		responsive: true, 
+		maintainAspectRatio: false,
 		legend: {
 			display: false,
 			position: 'top',
@@ -247,6 +248,8 @@ new Chart(ctx, {
     ]
   },
   options: {
+		responsive: true, 
+		maintainAspectRatio: false,
     title: {
       display: false
 		},
