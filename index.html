@@ -35,6 +35,10 @@
   <script src="js/jquery.easing.min.js"></script>
   <script src="js/jquery.fittext.js"></script>
   <script src="js/sb-admin-2.min.js"></script>
+
+  <!-- Vue.JS-->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body id="page-top" class=" bg-gray-100">
@@ -45,7 +49,8 @@
   <nav class="menu-navigation-icons navbar navbar-expand navbar-light bg-white mb-4 static-top shadow bd-exemple">
       <a href="#" class="menu-grey" style="width: 55px;"><i class="fas fa-question"></i></a>
       <a href="#" class="menu-blue"><i class="fas fa-file-alt"></i><span>Protocolo</span></a>
-      <a href="#" class="menu-red"><i class="fas fa-comment-alt"></i><span>Chat</span></a>
+      <a href="#" class="menu-black"><i class="fas fa-comment-alt"></i><span>Chat</span></a>
+      <a href="#" class="menu-red"><i class="fas fa-phone-volume"></i><span id="menu-chamada">Chamadas(0)</span></a>
       <a href="#" class="menu-grey"><i class="fas fa-chart-line"></i><span>Dashboard</span></a>
       <a href="#" class="menu-grey"><i class="fas fa-calendar-alt"></i><span>Agenda</span></a>
       <a href="#" class="menu-grey"><i class="fas fa-user-injured"></i><span>Pacientes</span></a>
@@ -229,12 +234,14 @@
   <script type="text/javascript" src="js/index.js"></script>
   <script type="text/javascript" src="js/chart.js"></script>
   <script type="text/javascript" src="js/jquery.slicknav.min.js"></script>
-  <!-- <script>
-    $(function(){
-        $('.menu-navigation-icons').slicknav();
-    });
-  </script> -->
-
+  <script>
+    (function(){
+      $.get( "https://localhost:44338/api/values", function( data ) {
+          $("#menu-chamada").html( "Chamada(" + data.length + ")");
+      }, "json" );
+      setTimeout(arguments.callee, 1000);
+    })();
+  </script>
 </body>
 
 </html>

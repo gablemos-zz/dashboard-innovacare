@@ -57,6 +57,9 @@
 .menu-navigation-icons a.menu-grey 		{ background-color: #cecece; }
 .menu-navigation-icons a.menu-grey i		{ color: #999999; }
 
+.menu-navigation-icons a.menu-black 		{ background-color: #353535; }
+.menu-navigation-icons a.menu-black i		{ color: #181818; }
+
 /* Make this page responsive */
 
 .slicknav_menu {

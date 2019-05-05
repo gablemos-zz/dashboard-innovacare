@@ -3,3 +3,4 @@ $(function() {
     $('#menu-equipe').fitText(1.5);
     $('.menu-navigation-icons').slicknav();
 });
+
