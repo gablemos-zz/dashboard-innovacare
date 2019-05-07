@@ -1,0 +1,567 @@
+﻿@model DIA.IOV.Models.ResumoViewModels.ResumoDiárioViewModel
+
+@{
+ViewData["Title"] = "DashBoard";
+
+string datas = "";
+string valores = "";
+
+@foreach (var data in @Model.IndicadoresDash.DatasContatosDorUltimaSemana)
+{
+datas += data + ",";
+}
+
+datas = datas.Substring(0, datas.Length - 1);
+
+@foreach (var data in @Model.IndicadoresDash.QtdContatosDorUltimaSemana)
+{
+valores += "[" + data + "],";
+}
+valores = valores.Substring(0, valores.Length - 1);
+
+
+@*<div class="main-content">
+    <div>
+        <h1>Produtos Cadastrados</h1>
+        <ul id="produtos" />
+    </div>
+    <div>
+        <label for="prodId">Código:</label>
+        <input type="text" id="prodId" size="5" />
+        <input type="button" value="Procurar" onclick="find();" />
+        <p id="duto" />
+    </div>
+</div>
+
+
+<br />
+<br />
+<br />*@
+
+}
+@*<div id="ler_ocorrencias">
+    @if (ViewBag.products != null)
+    {
+    @foreach (var product in ViewBag.products)
+    {
+    @product.PacienteId
+    }
+    }
+</div>*@
+
+<!-- Central -->
+<div class="row">
+    <!-- Planos Ativos -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-invisible shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1 text-center">
+                            <i class="fas fa-inbox fa-2x"></i>
+                            Planos Ativos
+                        </div>
+                        <div class="row no-gutters align-items-center">
+                            <div class="text-center">
+                                <div class="h6 mb-0 mr-3  text-gray-800">
+                                    Total<br>
+                                    @Model.PlanosAtivos
+                                </div>
+                            </div>
+                            <div class="col text-center">
+                                <span class="border-left-info"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto text-justify">
+                        <i class="fas fa-arrow-up"></i>
+                        @*%*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pacientes -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-invisible shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1 text-center">
+                            <i class="fas fa-user-injured fa-2x"></i>
+                            Pacientes
+                        </div>
+                        <div class="row no-gutters align-items-center">
+                            <div class="col-auto text-center lp-up">
+                                <div class="h6 mb-0 mr-3 text-gray-800">
+                                    Total<br>
+                                    @Model.Pacientes
+                                </div>
+                            </div>
+                            <div class="col text-center">
+                                <span class="border-left-info"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto text-justify hp-up">
+                        <i class="fas fa-arrow-down"></i>
+                        @*%*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Médicos -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-invisible shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1 text-center">
+                            <i class="fas fa-user-md fa-2x"></i>
+                            Médicos
+                        </div>
+                        <div class="row no-gutters align-items-center">
+                            <div class="text-center lp-up">
+                                <div class="h6 mb-3 mr-3 text-center text-gray-800">
+                                    Total<br>
+                                    @Model.Médicos
+                                </div>
+                            </div>
+                            <div class="col text-center">
+                                <span class="border-left-info"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto text-justify hp-up">
+                        <i class="fas fa-arrow-down"></i>
+                        @*%*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Agenda -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-invisible shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1 text-center">
+                            <i class="fas fa-calendar-alt fa-2x"></i>
+                            Agenda
+                        </div>
+                        <div class="row no-gutters align-items-center text-justify">
+                            <div class="col-auto lp-up">
+                                <div class="h6 mb-0 mr-3 text-center text-gray-800">
+                                    Hoje<br>
+
+                                    @if (Model.ContatosRealizados != null && Model.ContatosRealizados.Count() > 0)
+                                    {
+                                    @Model.ContatosRealizados.Count()
+                                    }
+                                    else
+                                    {
+                                    @Model.ContatosRealizados.Count()
+                                    }
+
+                                </div>
+                            </div>
+                            <div class="col text-center">
+                                <span class="border-left-info"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto h6 mb-0 mr-3 text-gray-800 text-center agp-up">
+                        Atrasado<br>
+                        @if (Model.ContatosAtrasados != null && Model.ContatosAtrasados.Count() > 0)
+                        {
+
+                        @Model.ContatosAtrasados.Count()
+                        }
+                        else
+                        {
+                        @Model.ContatosAtrasados.Count()
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Efeitos Colaterais -->
+    <div class="col-xl-6 col-md-6 mb-4">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3 text-center">
+                <div class="text-xs font-weight-bold text-info text-uppercase mb-1 text-center">
+                    Efeitos Colaterais
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-xl-4">
+                        <div class="col text-center lp-bt"><span>Sintomas Manejados</span></div>
+                        <div class="col">
+                            <canvas id="sintomas-chart"></canvas>
+                        </div>
+                        <hr>
+                        <div class="col text-center lp-bt"><span>Encaminhados ao<br>Pronto atendimento</span></div>
+                        <div class="col">
+                            <canvas id="encaminhados-chart"></canvas>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-8 " style="border-left: 1px solid black;">
+                        <div class="row h-100">
+                            <div class="col-6 col-sm-6 my-auto">
+                                <canvas id="total-chart"></canvas>
+
+                            </div>
+                            <div class="col-6 col-sm-6 my-auto">
+                                <canvas id="sucesso-chart"></canvas>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Visão Geral dos Planos Terapêuticos -->
+    <div class="col-xl-6 col-md-6 mb-4">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3 text-center">
+                <div class="text-xs font-weight-bold text-info text-uppercase mb-1 text-center">
+                    Visão Geral dos Planos Terapêuticos
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div class="row">
+                    <canvas id="visao-chart" width="800" height="360"></canvas>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Chamadas</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    @Html.Partial("_Ocorrencias")
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fim Gráfico Inferior -->
+    <!-- Scripts -->
+    @*_dneBuscarIEAction = '@Url.Action("api", "Produtos")';*@
+
+    @section scripts{
+    <script>
+
+        $(document).ready(function () {
+            var manej = @Html.Raw(Json.Serialize(Model.IndicadoresDash.SintomasManejados));
+            //alert(values);
+
+            'use strict';
+
+            var DEFAULT_COLORS = ['#8E5EA2', '#FF4A60', '#FF9E5E', '#696969', '#C0C0C0'];
+
+            var ctx1 = document.getElementById('sintomas-chart').getContext('2d');
+
+            new Chart(ctx1, {
+                type: 'doughnut',
+                data: {
+                    datasets: [{
+                        data: [manej],
+                        backgroundColor: DEFAULT_COLORS[0],
+                        label: 'Dataset 1'
+                    }],
+                    labels: ['Sintomas Manejados']
+                },
+                options: {
+                    responsive: true,
+                    legend: {
+                        display: false,
+                        position: 'top',
+                    },
+                    title: {
+                        display: false
+                    },
+                    animation: {
+                        animateScale: true,
+                        animateRotate: true
+                    },
+                    cutoutPercentage: 80,
+                    plugins: {
+                        doughnutlabel: {
+                            labels: [
+                                {
+                                    text: manej,
+                                    font: {
+                                        size: '25'
+                                    },
+                                    color: 'grey'
+                                }
+                            ]
+                        },
+                    }
+                }
+            });
+
+            var encaPS = @Html.Raw(Json.Serialize(Model.IndicadoresDash.EncaminhadosPS));
+
+            var ctx2 = document.getElementById('encaminhados-chart').getContext('2d');
+            new Chart(ctx2, {
+                type: 'doughnut',
+                data: {
+                    datasets: [{
+                        data: [encaPS],
+                        backgroundColor: DEFAULT_COLORS[1],
+                        label: 'Dataset 1'
+                    }],
+                    labels: ['Encaminhados']
+                },
+                options: {
+                    responsive: true,
+                    legend: {
+                        display: false,
+                        position: 'top',
+                    },
+                    title: {
+                        display: false
+                    },
+                    animation: {
+                        animateScale: true,
+                        animateRotate: true
+                    },
+                    cutoutPercentage: 80,
+                    plugins: {
+                        doughnutlabel: {
+                            labels: [
+                                {
+                                    text: encaPS,
+                                    font: {
+                                        size: '25',
+                                    },
+                                    color: 'grey'
+                                }
+                            ]
+                        }
+                    }
+                }
+            });
+
+            var total = @Html.Raw(Json.Serialize(Model.IndicadoresDash.TotalContatos));
+
+            var ctx3 = document.getElementById('total-chart').getContext('2d');
+            new Chart(ctx3, {
+                type: 'doughnut',
+                data: {
+                    datasets: [{
+                        data: [total],
+                        backgroundColor: DEFAULT_COLORS[3],
+                        label: 'Dataset 1'
+                    }],
+                    labels: ['Total']
+                },
+                options: {
+                    responsive: true,
+                    legend: {
+                        display: false,
+                        position: 'top',
+                    },
+                    title: {
+                        display: false,
+                        fontSize: 20,
+                    },
+                    animation: {
+                        animateScale: true,
+                        animateRotate: true
+                    },
+                    cutoutPercentage: 70,
+                    aspectRatio: 1,
+                    plugins: {
+                        doughnutlabel: {
+                            labels: [
+                                {
+                                    text: 'Total',
+                                    font: {
+                                        size: total
+                                    }
+                                },
+                                {
+                                    text: total,
+                                    font: {
+                                        size: '50'
+                                    },
+                                    color: 'grey'
+                                }
+                            ]
+                        }
+                    }
+                }
+            });
+
+            var taxaSucesso = @Html.Raw(Json.Serialize(Model.IndicadoresDash.TaxaSucesso));
+
+            var ctx4 = document.getElementById('sucesso-chart').getContext('2d');
+            new Chart(ctx4, {
+                type: 'doughnut',
+                data: {
+                    datasets: [{
+                        data: [manej, encaPS],
+                        backgroundColor: [DEFAULT_COLORS[0], DEFAULT_COLORS[3]],
+                        label: 'Dataset 1'
+                    }],
+                    labels: ['Taxa de sucesso', 'Outros']
+                },
+                options: {
+                    responsive: true,
+                    legend: {
+                        display: false,
+                        position: 'top',
+                    },
+                    title: {
+                        display: false,
+                        fontSize: 20,
+                    },
+                    animation: {
+                        animateScale: true,
+                        animateRotate: true
+                    },
+                    cutoutPercentage: 70,
+                    aspectRatio: 1,
+                    plugins: {
+                        doughnutlabel: {
+                            labels: [
+                                {
+                                    text: 'Taxa de',
+                                    font: {
+                                        size: '60'
+                                    }
+                                },
+                                {
+                                    text: 'sucesso',
+                                    font: {
+                                        size: '50'
+                                    },
+                                    color: 'grey'
+                                },
+                                {
+                                    text: taxaSucesso + ' %',
+                                    font: {
+                                        size: '50'
+                                    },
+                                    color: 'grey'
+                                }
+                            ]
+                        }
+                    }
+                }
+            });
+
+
+
+            @*var datasS = @Html.Raw(Json.Serialize(datas));
+            var valores = @Html.Raw(Json.Serialize(valores));*@
+
+
+
+        //alert(datasS);
+        //    alert(valores);
+
+
+
+        var ctx5 = document.getElementById('visao-chart').getContext('2d');
+            new Chart(ctx5, {
+                type: 'bar',
+                data: {
+                    labels: ['@DateTime.Today.AddDays(-1).ToShortDateString()', '@DateTime.Today.AddDays(-2).ToShortDateString()', '@DateTime.Today.AddDays(-3).ToShortDateString()', '@DateTime.Today.AddDays(-4).ToShortDateString()', '@DateTime.Today.AddDays(-5).ToShortDateString()', '@DateTime.Today.AddDays(-6).ToShortDateString()', '@DateTime.Today.AddDays(-7).ToShortDateString()'],
+                    datasets: [
+                        {
+                            label: "DOR",
+                            backgroundColor: DEFAULT_COLORS[4],
+                            data:
+                                [@valores]
+        }
+        //,
+        //{
+        //    label: "Mucosite",
+        //    backgroundColor: DEFAULT_COLORS[4],
+        //    data: [150, 150, 150, 150, 150, 150, 150]
+        //}, {
+        //    label: "Diarreia",
+        //    backgroundColor: DEFAULT_COLORS[4],
+        //    data: [50, 50, 50, 50, 50, 50, 50]
+        //}
+        ]
+        },
+            options: {
+                title: {
+                    display: false
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+            });
+
+            //$(document).ready(function () {           
+
+            //    jQuery.noConflict();
+
+            //(function ($) {
+            //    $(function () {
+            //        // More code using $ as alias to jQuery
+
+            //            $('#myModal').modal('show');
+
+            //    });
+            //    })(jQuery);                
+
+            //    //jQuery.ajax({
+            //    //        type: "GET",
+            //    //        url: "api/produtos",
+            //    //        contentType: "application/json; charset=utf-8",
+            //    //        dataType: "json",
+            //    //        success: function (data) {                          
+            //    //            jQuery("#menu-chamada").html("Chamada(" + data.length + ")");                                        
+            //    //        }, //End of AJAX Success function  
+
+            //    //        failure: function (data) {
+            //    //            alert(data.responseText);
+            //    //        }, //End of AJAX failure function  
+            //    //        error: function (data) {
+            //    //            alert(data.responseText);
+            //    //        } //End of AJAX error function  
+            //    //    });
+            //});
+
+    </script>
+    }
+</div>
