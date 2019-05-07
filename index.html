@@ -25,21 +25,18 @@
   <link  rel="stylesheet" type="text/css"href="css/index.css">
   <link  rel="stylesheet" type="text/css"href="css/slicknav.min.css">
   <link  rel="stylesheet" type="text/css"href="css/navigation.css">
-
-
-  <!-- JavaScript-->
+  <link  rel="stylesheet" type="text/css"href="css/jquery.dataTables.min.css">
+  <link  rel="stylesheet" type="text/css"href="css/dataTables.bootstrap4.min.css">
   
 
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
-  <script src="datatables/dataTables.bootstrap4.min.css"></script>
+  <!-- JavaScript-->
   <script src="js/Chart.min.js"></script>
   <script src="js/chartjs-plugin-doughnutlabel.min.js"></script>
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery.easing.min.js"></script>
   <script src="js/jquery.fittext.js"></script>
   <script src="js/sb-admin-2.min.js"></script>
+  <script src="js/jquery.slicknav.min.js"></script>
 </head>
 
 <body id="page-top" class=" bg-gray-100">
@@ -230,8 +227,8 @@
 
 
   <!-- Modal -->
-  <div class="modal" id="modal-chamada">
-    <div class="modal-dialog">
+  <div class="modal fade bd-example-modal-lg" id="modal-chamada">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
       
         <!-- Modal Header -->
@@ -242,49 +239,56 @@
         
         <!-- Modal body -->
         <div class="modal-body">
-          <!-- DataTales Example -->
+          <!-- DataTale -->
           <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Chamadas em Aberto</h6>
-            </div>
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table id="datatable"  class="table table-bordered"width="100%" cellspacing="0">
                   <thead>
-                    <tr>
-                      <th>Nome do Paciente</th>
-                      <th>Telefone/Celular</th>
-                      <th>Data</th>
-                      <th>Confirmar Atendimento</th>
-                    </tr>
+                      <tr>
+                          <th>Name</th>
+                          <th>Telefone</th>
+                          <th>Data</th>
+                          <th>Confirmar</th>
+                      </tr>
                   </thead>
-                  <tfoot>
-                    <tr>
-                      <th>Nome do Paciente</th>
-                      <th>Telefone/Celular</th>
-                      <th>Data</th>
-                      <th>Confirmar Atendimento</th>
-                    </tr>
-                  </tfoot>
                   <tbody>
-                    <tr>
-                      <td>Tiger</td>
-                      <td>61</td>
-                      <td>2011/04/25</td>
-                      <td><button class=" btn btn-success">Atender</button></td>
-                    </tr>
-                    <tr>
-                      <td>Garrett</td>
-                      <td>63</td>
-                      <td>2011/07/25</td>
-                      <td><button class="btn btn-success">Atender</button></td>
-                    </tr>
-                    <tr>
-                      <td>Ashton</td>
-                      <td>66</td>
-                      <td>2009/01/12</td>
-                      <td><button class="btn btn-success">Atender</button></td>
-                    </tr>
+                      <tr>
+                          <td>Tiger Nixon</td>
+                          <td>(61)91234-1234</td>
+                          <td>2011/04/25</td>
+                          <td class="text-center"><button class="btn btn-success">Atendido</button></td>
+                      </tr>
+                      <tr>
+                          <td>Garrett Winters</td>
+                          <td>(63)91234-1234</td>
+                          <td>2011/07/25</td>
+                          <td class="text-center"><button class="btn btn-success">Atendido</button></td>
+                      </tr>
+                      <tr>
+                          <td>Ashton Cox</td>
+                          <td>(66)91234-1234</td>
+                          <td>2009/01/12</td>
+                          <td class="text-center"><button class="btn btn-success">Atendido</button></td>
+                      </tr>
+                      <tr>
+                          <td>Cedric Kelly</td>
+                          <td>(22)91234-1234</td>
+                          <td>2012/03/29</td>
+                          <td class="text-center"><button class="btn btn-success">Atendido</button></td>
+                      </tr>
+                      <tr>
+                          <td>Airi Satou</td>
+                          <td>(33)91234-1345</td>
+                          <td>2008/11/28</td>
+                          <td class="text-center"><button class="btn btn-success">Atendido</button></td>
+                      </tr>
+                      <tr>
+                          <td>Brielle Williamson</td>
+                          <td>(61)91234-134</td>
+                          <td>2012/12/02</td>
+                          <td class="text-center"><button class="btn btn-success">Atendido</button></td>
+                      </tr>
                   </tbody>
                 </table>
               </div>
@@ -306,12 +310,9 @@
   <!-- Scripts -->
   <script type="text/javascript" src="js/index.js"></script>
   <script type="text/javascript" src="js/chart.js"></script>
-  <script type="text/javascript" src="js/jquery.slicknav.min.js"></script>
-  <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
-  <script type="text/javascript" src="js/datatables-demo.js"></script>
-  <script type="text/javascript" src="datatables/jquery.dataTables.min.js"></script>
-  <script type="text/javascript" src="datatables/dataTables.bootstrap4.min.js"></script>
+  <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
+  <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
   <script>
     (function(){
       $.get( "https://localhost:44301/api/values", function( data ) {
