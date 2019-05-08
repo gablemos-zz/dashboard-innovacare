@@ -1,0 +1,150 @@
+﻿jQuery(document).ready(function (jQuery) {
+    initializeClicableRow();
+    initializeFields();
+});
+
+
+function initializeClicableRow() {
+    // Colunas clicáveis
+    jQuery(".clickable-row").click(function () {
+        window.location = jQuery(this).data("href");
+    });
+}
+
+// funções auxiliares para o site.
+function initializeFields() {
+
+    initializeMask();
+    initializeDatePicker();
+
+    jQuery(document.body).on('blur', 'input.currency, input.percent', function () {
+        this.value = toLocal(this.value);
+    });
+
+
+    jQuery("input.currency").each(function () {
+        this.value = toLocal(this.value);
+    });
+}
+
+
+function initializeDatePicker() {
+
+
+    var icons = {
+        time: "fas fa-clock-o",
+        date: "fas fa-calendar",
+        up: "fas fa-chevron-up",
+        down: "fas fa-chevron-down",
+        previous: 'fa fa-chevron-left',
+        next: 'fas fa-chevron-right',
+        today: 'fas fa-screenshot',
+        clear: 'fas fa-trash',
+        close: 'fas fa-remove'
+    };
+
+    // dateTimePicker helper
+    jQuery('input.month')
+        .datetimepicker({
+            locale: 'pt-br',
+            viewMode: 'months',
+            format: 'MM/YYYY',
+            minDate: "1900-01-01",
+            defaultDate: Date.now(),
+            icons: icons
+        });
+
+    jQuery("input.month").on("dp.show",
+        function (e) {
+            jQuery(e.target).data("DateTimePicker").viewMode("months");
+        });
+
+    jQuery('input.date:enabled')
+        .datetimepicker({
+            locale: 'pt-br',
+            viewMode: 'days',
+            format: "DD/MM/YYYY",
+            minDate: "01/01/1900",
+            icons: icons
+        });
+
+    jQuery('input.datetime:enabled')
+        .datetimepicker({
+            locale: 'pt-br',
+            viewMode: 'days',
+            format: "DD/MM/YYYY HH:mm",
+            minDate: "01/01/1900",
+            icons: icons
+        });
+
+    if (jQuery('input.date.current').data("DateTimePicker"))
+        jQuery('.date.current').data("DateTimePicker").options({ minDate: "01/01/1900", defaultDate: moment() });
+
+    if (jQuery('input.date.future').data("DateTimePicker"))
+        jQuery('.date.future').data("DateTimePicker").options({ minDate: moment() });
+
+    jQuery('input').on("dp.change", function (e) {
+        this.dispatchEvent(new Event('change', { bubbles: true, cancelable: false }));       
+    });
+
+}
+
+
+function initializeMask() {
+    //Inputmask.extendDefaults({
+    //    clearIncomplete: true,
+    //    clearMaskOnLostFocus: true,
+    //});
+    Inputmask({ mask: "(99) 99999999[9]" }).mask(".phone");
+    Inputmask({ mask: "999.999.999-99" }).mask(".cpf");
+    Inputmask({ mask: "99.999.999/9999-99" }).mask(".cnpj");
+    Inputmask({ mask: "99999-999" }).mask(".cep");
+    //Inputmask({ mask: "dd/mm/yyyy" }).mask(".date");
+    //Inputmask({ mask: "d/m/y" }).mask(".datetime");
+    Inputmask({ mask: "99:99" }).mask(".time");
+    Inputmask({ mask: "AA" }).mask(".uf");
+}
+
+function toLocal(num) {
+    if (!num) num = 0;
+    return numeral(num).format('0.00');
+}
+
+function toSimple(num) {
+    if (!num) num = 0;
+    return numeral(num).format("0.[0]");
+}
+
+function fromLocal(num) {
+    return numeral(num).value();
+}
+
+var fl = fromLocal;
+var ts = toSimple;
+var tl = toLocal;
+var tc = toLocal;
+
+
+function fromArray(array, recursive, id) {
+
+    if (array === null) return array;
+    if (id === null) id = "id";
+    if (recursive === null) recursive = true;
+
+    if (!(array instanceof Array) || array.length === 0 || array[0][id] === null)
+        return array;
+
+    var object = {};
+
+    for (var item of array) {
+
+        // Apply to item
+        object[item[id]] = item;
+
+        // Apply to SubItems
+        if (recursive) for (prop in item) item[prop] = fromArray(item[prop]);
+
+    }
+    return object;
+}
+

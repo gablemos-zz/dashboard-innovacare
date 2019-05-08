@@ -1,0 +1,106 @@
+﻿function calculaPontos() {
+    var soma = 0;
+    var inputPontos = jQuery(".pontos");
+    for (i = 0; i < inputPontos.length; i++) {
+        var dado = inputPontos[i].getAttribute("data-points");
+        soma += dado;
+    }
+
+    var opt = new Array(0, 0, 0, 0, 0);
+    var pow = 5;
+    while (soma > 0) {
+        if (soma - Math.pow(2, pow) >= 0) {
+            soma -= Math.pow(2, pow);
+            opt[pow] = 1;
+        }
+        else {
+            opt[pow] = 0;
+        }
+        alert("Soma = " + soma + "\n" + pow + " = " + opt[pow]);
+        pow--;
+    }
+
+    if (opt[0] + opt[1] + opt[2] === 0)
+        alert("Tratamento ok.");
+}
+
+function calculaDor() {
+    var dor = parseFloat(jQuery("#Contato_EscalaDaDor").val());
+    if (dor >= 7) {       
+        exibirOpcoes("intensa");
+    }
+    else if (dor >= 4) {
+        exibirOpcoes("moderada");
+    }
+    else {
+        exibirOpcoes("leve");
+    }
+}
+
+function exibirOpcoes(tipo) {
+    switch (tipo) {
+        case "leve":
+            jQuery("#dorLeve").show();
+            jQuery("#dorModerada").hide();
+            jQuery("#dorIntensa").hide();
+            break;
+        case "moderada":
+            jQuery("#dorModerada").show();
+            jQuery("#dorLeve").hide();
+            jQuery("#dorIntensa").hide();
+            break;
+        case "intensa":
+            jQuery("#dorIntensa").show();
+            jQuery("#dorModerada").hide();
+            jQuery("#dorLeve").hide();
+            break;
+    }
+}
+
+
+function salvarMedicamento() {
+    var nome = jQuery("#MedicamentosReceitados_0__Medicamento_Nome").val();
+    var categoria = jQuery("#MedicamentosReceitados_0__Medicamento_Categoria").val();
+
+    jQuery.ajax({
+        method: "POST",
+        url: "/Medicamentos/CreateAsync",
+        data: {
+            Nome: nome,
+            PrincipioAtivo: nome,
+            Categoria: categoria
+        }
+    })
+        .done(function (result) {
+            console.log(result);
+            vm.jQuerydata.optionsData = result;
+            alert("Medicamento cadastrado com sucesso!");
+            jQuery("#modal-cad-medicamento").modal('toggle');
+        })
+        .fail(function () {
+            alert("Não foi possível cadastrar o medicamento");
+        });
+}
+
+
+function carregarAlergias(selectPaciente) {
+    var idPaciente = selectPaciente.value;
+    alert(idPaciente);
+    jQuery.ajax({
+        method: "POST",
+        url: "/Pacientes/GetListaDeAlergia",
+        data: {
+            id: idPaciente
+        }
+    })
+        .done(function (result) {
+            vm.$data.medicamentosAlergia = result;
+        });
+}
+
+jQuery(document).ready(function () {
+    jQuery('.alert').on('DOMSubtreeModified', function () {
+        calculaDor();
+    });
+    document.getElementById("Contato_EscalaDaDor").addEventListener("change", calculaDor());
+});

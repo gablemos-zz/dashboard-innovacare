@@ -1,0 +1,31 @@
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+exports.defaults={},exports.set=function(e,t,o){var n=o||{},p=exports.defaults,r=n.expires||p.expires,i=n.domain||p.domain,s=void 0!==n.path?n.path:void 0!==p.path?p.path:"/",a=void 0!==n.secure?n.secure:p.secure,c=void 0!==n.httponly?n.httponly:p.httponly,d=void 0!==n.samesite?n.samesite:p.samesite,l=r?new Date("number"==typeof r?(new Date).getTime()+864e5*r:r):0;document.cookie=e.replace(/[^+#$&^`|]/g,encodeURIComponent).replace("(","%28").replace(")","%29")+"="+t.replace(/[^+#$&\/:<-\[\]-}]/g,encodeURIComponent)+(l&&l.getTime()>=0?";expires="+l.toUTCString():"")+(i?";domain="+i:"")+(s?";path="+s:"")+(a?";secure":"")+(c?";httponly":"")+(d?";samesite="+d:"")},exports.get=function(e){for(var t=document.cookie.split(";");t.length;){var o=t.pop(),n=o.indexOf("=");if(n=n<0?o.length:n,decodeURIComponent(o.slice(0,n).replace(/^\s+/,""))===e)return decodeURIComponent(o.slice(n+1))}return null},exports.erase=function(e,t){exports.set(e,"",{expires:-1,domain:t&&t.domain,path:t&&t.path,secure:0,httponly:0})},exports.all=function(){for(var e={},t=document.cookie.split(";");t.length;){var o=t.pop(),n=o.indexOf("=");n=n<0?o.length:n,e[decodeURIComponent(o.slice(0,n).replace(/^\s+/,""))]=decodeURIComponent(o.slice(n+1))}return e};
+
+},{}],2:[function(require,module,exports){
+"use strict";module.exports={trackingTimeout:6e4,siteDomain:".passeidireto.com"};
+
+},{}],3:[function(require,module,exports){
+"use strict";var common=require("./common"),envConfig=require("./production");module.exports=Object.assign({},common,envConfig,{env:"production"});
+
+},{"./common":2,"./production":4}],4:[function(require,module,exports){
+"use strict";module.exports={sessionTrackingUrl:"https://session-tracking-api.passeidireto.com",trackingTimeout:36e5};
+
+},{}],5:[function(require,module,exports){
+"use strict";var config=require("./config"),debounce=require("./utils/debounce"),ajaxRequest=require("./utils/ajaxRequest"),cookieUtil=require("./utils/cookies"),utmUtil=require("./utils/utms"),windowUtil=require("./utils/window"),DEBOUNCE_MS=500,TIMEOUT_MS=1e3,LAST_TRACKING_CALL_COOKIE_NAME="last-session-tracking-call";function doTrackSession(){var e=window&&window.location?window.location.href:null,i=cookieUtil.getCookie("pd_track_campaign"),t=utmUtil.parse(e);Object.keys(t).length||(t=utmUtil.parse(i));var o=cookieUtil.getCookie("session_key");if(o){var n=windowUtil.getUserId();n&&(cookieUtil.setCookie(LAST_TRACKING_CALL_COOKIE_NAME,(new Date).toISOString()),ajaxRequest("POST",config.sessionTrackingUrl+"/session/"+n+"/track",o,{utms:t},windowUtil.getClientData()).catch(function(e){503!==e.status&&cookieUtil.removeCookie(LAST_TRACKING_CALL_COOKIE_NAME)}))}}function trackSession(){var e=cookieUtil.getCookie(LAST_TRACKING_CALL_COOKIE_NAME);if(!e)return doTrackSession();e=new Date(e);var i=new Date;Math.abs(e-i)>=config.trackingTimeout&&doTrackSession()}function run(){var e=debounce(trackSession,DEBOUNCE_MS);document.addEventListener("click",e),document.addEventListener("scroll",e,!0),window.setTimeout(e,TIMEOUT_MS)}module.exports=run();
+
+},{"./config":3,"./utils/ajaxRequest":6,"./utils/cookies":7,"./utils/debounce":8,"./utils/utms":9,"./utils/window":10}],6:[function(require,module,exports){
+"use strict";function ajaxRequest(e,t,s,n){var a=arguments.length>4&&void 0!==arguments[4]?arguments[4]:{};return new Promise(function(r,o){var i=new XMLHttpRequest;i.onreadystatechange=function(){4==i.readyState&&(i.status>=200&&i.status<=299?r(i.responseText&&""!=i.responseText?JSON.parse(i.responseText):null):o({status:i.status,data:i.responseText}))},i.open(e,t,!0),i.setRequestHeader("Content-Type","application/json"),i.setRequestHeader("Accept","application/json"),i.setRequestHeader("Authorization",s),i.setRequestHeader("pd-app-client-id",a.id||a.name),i.setRequestHeader("pd-app-client-version",a.version),"POST"==e?i.send(JSON.stringify(n)):i.send()})}module.exports=ajaxRequest;
+
+},{}],7:[function(require,module,exports){
+"use strict";var cookies=require("browser-cookies"),config=require("../config");function getCookie(e){var o=cookies.get(e);if(o)try{return JSON.parse(o)}catch(e){return o}}function removeCookie(e){cookies.erase(e)}function setCookie(e,o){cookies.set(e,o)}cookies.defaults.domain=config.siteDomain,module.exports={setCookie:setCookie,getCookie:getCookie,removeCookie:removeCookie};
+
+},{"../config":3,"browser-cookies":1}],8:[function(require,module,exports){
+"use strict";function debounce(e,t,u){var n;return function(){var o=this,c=arguments,i=u&&!n;clearTimeout(n),n=setTimeout(function(){n=null,u||e.apply(o,c)},t),i&&e.apply(o,c)}}module.exports=debounce;
+
+},{}],9:[function(require,module,exports){
+"use strict";function parseUtms(e){var t={};if(!e)return{};document.referrer.indexOf("google")>-1&&(t.utm_source="Google",t.utm_medium="SEO");for(var i=e.replace("/",""),s=(i=i?i.slice(i.lastIndexOf("?")+1):"").split("&"),r=0;r<s.length;r++){var m=s[r];if(m.startsWith("utm_source")&&m.indexOf("=")<m.length-1)t.utm_source=m.slice(m.indexOf("=")+1);else if(m.startsWith("utm_medium")&&m.indexOf("=")<m.length-1)t.utm_medium=m.slice(m.indexOf("=")+1);else if(m.startsWith("utm_campaign")&&m.indexOf("=")<m.length-1)t.utm_campaign=m.slice(m.indexOf("=")+1);else if(m.startsWith("gclid")&&m.indexOf("=")<m.length-1){t.utm_source="Google Adwords",t.utm_medium="SEM";break}}return t}module.exports={parse:parseUtms};
+
+},{}],10:[function(require,module,exports){
+"use strict";var DEFAULT_CLIENT="Website";function getUserId(){return window.PD?PD.session&&PD.session.student?window.PD.session.student.id||window.PD.session.student.Id:window.PD.studentId:null}function getClientData(){return{name:window.pdAppName||DEFAULT_CLIENT,id:window.pdAppId,version:window.pdAppVersion}}module.exports={getUserId:getUserId,getClientData:getClientData};
+
+},{}]},{},[5]);

@@ -1,0 +1,29 @@
+$(function() {
+    $('#menu-email').fitText(1.8);
+    $('#menu-equipe').fitText(1.5);
+    $('.menu-navigation-icons').slicknav();
+});
+
+
+    $(document).ready(function () {
+
+        jQuery.noConflict();
+
+    jQuery.ajax({
+        type: "GET",
+        url: "../../api/produtos",
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+                    success: function (data) {
+        jQuery("#menu-chamada").html("Chamada(" + data.length + ")");
+    }, //End of AJAX Success function
+
+                    failure: function (data) {
+        alert(data.responseText);
+    }, //End of AJAX failure function
+                    error: function (data) {
+        alert(data.responseText);
+    } //End of AJAX error function
+});
+});
+  
