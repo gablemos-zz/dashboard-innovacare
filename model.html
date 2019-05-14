@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Innovecare</title>
+
+  <!-- Fonts-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+
+  <!-- Style-->
+  <link  rel="stylesheet" type="text/css"href="css/bootstrap-reboot.min.css">
+  <link  rel="stylesheet" type="text/css"href="css/bootstrap.min.css">
+  <link  rel="stylesheet" type="text/css"href="css/bootstrap-grid.min.css">
+  <link  rel="stylesheet" type="text/css"href="css/sb-admin-2.min.css">
+  <link  rel="stylesheet" type="text/css"href="css/index.css">
+  <link  rel="stylesheet" type="text/css"href="css/slicknav.min.css">
+  <link  rel="stylesheet" type="text/css"href="css/navigation.css">
+  <link  rel="stylesheet" type="text/css"href="css/jquery.dataTables.min.css">
+  <link  rel="stylesheet" type="text/css"href="css/dataTables.bootstrap4.min.css">
+  
+
+  <!-- JavaScript-->
+  <script src="js/Chart.min.js"></script>
+  <script src="js/chartjs-plugin-doughnutlabel.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/jquery.fittext.js"></script>
+  <script src="js/sb-admin-2.min.js"></script>
+  <script src="js/jquery.slicknav.min.js"></script>
+</head>
+
+<body id="page-top" class=" bg-gray-100">
+
+  
+  <!-- Topbar -->
+  <nav class="menu-navigation-icons navbar navbar-expand navbar-light bg-white mb-4 static-top shadow bd-exemple">
+      <a href="#" class="menu-grey" style="width: 55px;"><i class="fas fa-question"></i></a>
+      <a href="#" class="menu-blue"><i class="fas fa-file-alt"></i><span>Protocolo</span></a>
+      <a href="#" class="menu-black"><i class="fas fa-comment-alt"></i><span>Chat</span></a>
+      <a href="#" class="menu-red" data-toggle="modal" data-target="#modal-chamada"><i class="fas fa-phone-volume"></i><span id="menu-chamada">Chamadas(0)</span></a>
+      <a href="#" class="menu-grey"><i class="fas fa-chart-line"></i><span>Dashboard</span></a>
+      <a href="#" class="menu-grey"><i class="fas fa-calendar-alt"></i><span>Agenda</span></a>
+      <a href="#" class="menu-grey"><i class="fas fa-user-injured"></i><span>Pacientes</span></a>
+      <a href="#" class="menu-grey"><i class="fas fa-user-md"></i><span id="menu-equipe">Equipe Multidiciplinar</span></a>
+      <a href="#" class="menu-grey"><i class="fas fa-hospital"></i><span>Planos de Saúde</span></a>
+      <a href="#" class="menu-grey"><i class="fas fa-capsules"></i><span>Medicamentos</span></a>
+      <a href="#" class="menu-grey"><i class="fas fa-user-circle"></i><span id="menu-email">teste@innovecare.com.br</span></a>
+      <a href="#" class="menu-grey"  style="width: 55px;"><i class="fas fa-sign-out-alt"></i></a>
+  </nav>
+  <!-- End of Topbar -->
+
+  <!-- Central -->
+  <div class="container-fluid text-center">    
+  </div>
+  <!-- Fim Central -->
+
+  
+
+  <!-- Modal -->
+  <div class="modal fade bd-example-modal-lg" id="modal-chamada">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Chamadas</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <!-- DataTale -->
+          <div class="card shadow mb-4">
+            <div class="card-body">
+              <div class="table-responsive">
+                <table id="datatable"  class="table table-bordered"width="100%" cellspacing="0">
+                  <thead>
+                      <tr>
+                          <th>Name</th>
+                          <th>Telefone</th>
+                          <th>Data</th>
+                          <th>Confirmar</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>Tiger Nixon</td>
+                          <td>(61)91234-1234</td>
+                          <td>2011/04/25</td>
+                          <td class="text-center"><button class="btn btn-success">Atendido</button></td>
+                      </tr>
+                      <tr>
+                          <td>Garrett Winters</td>
+                          <td>(63)91234-1234</td>
+                          <td>2011/07/25</td>
+                          <td class="text-center"><button class="btn btn-success">Atendido</button></td>
+                      </tr>
+                      <tr>
+                          <td>Ashton Cox</td>
+                          <td>(66)91234-1234</td>
+                          <td>2009/01/12</td>
+                          <td class="text-center"><button class="btn btn-success">Atendido</button></td>
+                      </tr>
+                      <tr>
+                          <td>Cedric Kelly</td>
+                          <td>(22)91234-1234</td>
+                          <td>2012/03/29</td>
+                          <td class="text-center"><button class="btn btn-success">Atendido</button></td>
+                      </tr>
+                      <tr>
+                          <td>Airi Satou</td>
+                          <td>(33)91234-1345</td>
+                          <td>2008/11/28</td>
+                          <td class="text-center"><button class="btn btn-success">Atendido</button></td>
+                      </tr>
+                      <tr>
+                          <td>Brielle Williamson</td>
+                          <td>(61)91234-134</td>
+                          <td>2012/12/02</td>
+                          <td class="text-center"><button class="btn btn-success">Atendido</button></td>
+                      </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <!-- Fim Modal -->
+
+  
+  <!-- Scripts -->
+  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/chart.js"></script>
+  <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
+  <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+</body>
+
+</html>

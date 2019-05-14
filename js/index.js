@@ -33,3 +33,10 @@ $(document).ready(function() {
         "lengthMenu": [[5, 10], [5, 10]]
     } );
 } );
+
+(function(){
+    $.get( "https://localhost:44301/api/values", function( data ) {
+        $("#menu-chamada").html( "Chamada(" + data.length + ")");
+    }, "json" );
+    setTimeout(arguments.callee, 1000);
+  })();

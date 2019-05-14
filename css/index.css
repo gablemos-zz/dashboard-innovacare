@@ -29,12 +29,24 @@ a:hover, a:visited, a:link, a:active {
     padding-top: 25px;
 }
 
+.agp-down{
+    padding-bottom: 25px;
+}
+
 .hp-up{
     padding-top: 20px;
 }
 
+.hp-down{
+    padding-bottom: 20px;
+}
+
 .lp-up{
     padding-top: 5px;
+}
+
+.lp-down{
+    padding-bottom: 5px;
 }
 
 .btn-primary{
@@ -43,4 +55,30 @@ a:hover, a:visited, a:link, a:active {
 
 .btn-danger{
     background-color: #FF4A60
+}
+
+.btn-bigger{
+    padding-top: 5%;
+    padding-bottom: 25px;
+    height: 102px;
+}
+
+.gradient{
+    background-image: radial-gradient(white, #229AD4);
+    color: grey;
+}
+
+.gradient:hover{
+    color: black;
+    background-image: radial-gradient(white, rgb(28, 128, 179));
+}
+
+.column-scroll{
+    border-left: 1px solid rgba(0,0,0,.1);
+    border-right: 1px grey solid; 
+    overflow:scroll; height:50rem;
+}
+
+.big-text{
+    font-size: 16px
 }
