@@ -20,8 +20,8 @@
 
   <!-- Style-->
   <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/sb-admin-2.min.css">
   <link rel="stylesheet" type="text/css" href="css/index.css">
   <link rel="stylesheet" type="text/css" href="css/slicknav.min.css">
@@ -38,6 +38,7 @@
   <script src="js/jquery.fittext.js"></script>
   <script src="js/sb-admin-2.min.js"></script>
   <script src="js/jquery.slicknav.min.js"></script>
+  <script src="js/popper.min.js"></script>
 </head>
 
 <body id="page-top" class=" bg-gray-100">
@@ -79,18 +80,18 @@
       </div>
     </div>
 
-    
-    <div id="accordion" role="tablist" aria-multiselectable="true">
-      <!-- Card Médico -->
-      <div class="card text-left">
-          <!-- Dados Médico -->
-          <div class="card-header collapsed d-block" role="tab" id="medicoUm" data-toggle="collapse" data-parent="#accordion" href="#pacienteUm"
-          aria-expanded="false" aria-controls="pacienteUm">
+    <br>
+
+    <div id="accordion" role="tablist">
+      <div class="card">
+        <div class="card-header" role="tab" id="headingThree">
+          <div class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false"
+            aria-controls="collapseThree">
             <div class="row">
-              <div class="col-xl-8 col-md-8">
-                <h6 class="card-subtitle mb-2 text-muted">Nome</h6>
+              <div class="col-xl-8 col-md-8 text-left lm-up"">
+                      <h6 class=" card-subtitle mb-2 text-muted">Nome</h6>
               </div>
-              <div class="col-xl-4 col-md-4 text-center">
+              <div class="col-xl-4 col-md-4 text-center lm-up">
                 <h6 class="card-subtitle mb-2 text-muted">Pacientes Associados</h6>
               </div>
             </div>
@@ -116,45 +117,61 @@
               </div>
             </div>
           </div>
-          <!-- Dados Paciente -->
-          <div id="pacienteUm" class="collapse" role="tabpanel" aria-labelledby="medicoUm">
-              <div class="card-body">
-                Nome: <span>Henrique Zanoni</span>
-                <br>
-                CPF: <span>251.129.078-27</span>
-                <br>
-                RG: <span>24.850.519-1</span>
-                <br>
-                E-mail: <span>-</span>
-                <br>
-                Data de Nascimento: <span>01/12/1975</span>
-                <br>
-                CRM: <span>103166</span>
-                <br>
-                <h3>Pacientes atendidos pelo Médico</h3>
-                <span>Edna Maria das Neves<a href="#">Ver dados do paciente</a>
-                  <br>
-                <span>Maria Elvira de Almeida<a href="#">Ver dados do paciente</a>
-                  <br>
-                <span>Gisele Maria Miranda Gonçalves Mariangelo<a href="#">Ver dados do paciente</a>
-                  <br>
-                <span>Paulo Cesar Villanova Ruiz<a href="#">Ver dados do paciente</a>
-                  <br>
+        </div>
+        <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree"
+          data-parent="#accordion">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-xd-4 col-md-4 mb-4">
+                Nome: <br><span>Henrique Zanoni</span>                
+              </div>
+              <div class="col-xd-4 col-md-4 mb-4">
+                CPF: <br><span>251.129.078-27</span>
+              </div>
+              <div class="col-xd-4 col-md-4 mb-4">
+                RG: <br><span>24.850.519-1</span>
+              </div>
+              <div class="col-xd-4 col-md-4 mb-4">
+                E-mail: <br><span>-</span>
+              </div>
+              <div class="col-xd-4 col-md-4 mb-4">
+                Data de Nascimento: <br><span>01/12/1975</span>
+              </div>
+              <div class="col-xd-4 col-md-4 mb-4">
+                CRM: <br><span>103166</span>                
+              </div>
+              <div class="col-xd-12 col-md-12 mb-4">
+                <h4>Pacientes atendidos pelo Médico</h4>               
               </div>
             </div>
-        </div>
-        
-        <br>
-         <!-- Card Médico -->
-      <div class="card text-left">
-          <!-- Dados Médico -->
-          <div class="card-header collapsed d-block" role="tab" id="medicoDois" data-toggle="collapse" data-parent="#accordion" href="#pacienteDois"
-          aria-expanded="false" aria-controls="pacienteDois">
             <div class="row">
-              <div class="col-xl-8 col-md-8">
-                <h6 class="card-subtitle mb-2 text-muted">Nome</h6>
+              <div class="col-xd-3 col-md-3 mb-4">
+                Nome: <br><span>Edna Maria das Neves</span>                
               </div>
-              <div class="col-xl-4 col-md-4 text-center">
+              <div class="col-xd-3 col-md-3 mb-4">
+                Celular: <br><span>(XX)XXXXX-XXXX</span>                
+              </div>
+              <div class="col-xd-3 col-md-3 mb-4">
+                Codigo da Doença: <br><span>123453789</span>                
+              </div>
+              <div class="col-xd-3 col-md-3 mb-4">
+                <div class="card">
+                  <a href="#">Ver dados do paciente</a>    
+                </div>         
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" role="tab" id="headingTwo">
+          <div class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false"
+            aria-controls="collapseTwo">
+            <div class="row">
+              <div class="col-xl-8 col-md-8 text-left lm-up"">
+                      <h6 class=" card-subtitle mb-2 text-muted">Nome</h6>
+              </div>
+              <div class="col-xl-4 col-md-4 text-center lm-up">
                 <h6 class="card-subtitle mb-2 text-muted">Pacientes Associados</h6>
               </div>
             </div>
@@ -180,35 +197,36 @@
               </div>
             </div>
           </div>
-          <!-- Dados Paciente -->
-          <div id="pacienteDois" class="collapse" role="tabpanel" aria-labelledby="medicoDois">
-              <div class="card-body">
-                Nome: <span>Henrique Zanoni</span>
+        </div>
+        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo"
+          data-parent="#accordion">
+          <div class="card-body">
+              Nome: <span>Henrique Zanoni</span>
+              <br>
+              CPF: <span>251.129.078-27</span>
+              <br>
+              RG: <span>24.850.519-1</span>
+              <br>
+              E-mail: <span>-</span>
+              <br>
+              Data de Nascimento: <span>01/12/1975</span>
+              <br>
+              CRM: <span>103166</span>
+              <br>
+              <h3>Pacientes atendidos pelo Médico</h3>
+              <span>Edna Maria das Neves<a href="#">Ver dados do paciente</a>
                 <br>
-                CPF: <span>251.129.078-27</span>
+              <span>Maria Elvira de Almeida<a href="#">Ver dados do paciente</a>
                 <br>
-                RG: <span>24.850.519-1</span>
+              <span>Gisele Maria Miranda Gonçalves Mariangelo<a href="#">Ver dados do paciente</a>
                 <br>
-                E-mail: <span>-</span>
+              <span>Paulo Cesar Villanova Ruiz<a href="#">Ver dados do paciente</a>
                 <br>
-                Data de Nascimento: <span>01/12/1975</span>
-                <br>
-                CRM: <span>103166</span>
-                <br>
-                <h3>Pacientes atendidos pelo Médico</h3>
-                <span>Edna Maria das Neves<a href="#">Ver dados do paciente</a>
-                  <br>
-                <span>Maria Elvira de Almeida<a href="#">Ver dados do paciente</a>
-                  <br>
-                <span>Gisele Maria Miranda Gonçalves Mariangelo<a href="#">Ver dados do paciente</a>
-                  <br>
-                <span>Paulo Cesar Villanova Ruiz<a href="#">Ver dados do paciente</a>
-                  <br>
-              </div>
             </div>
         </div>
+      </div>
     </div>
-    <!--Fim Card Médico -->
+
   </div>
   <!-- Fim Central -->
 

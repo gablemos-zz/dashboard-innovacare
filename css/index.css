@@ -33,7 +33,7 @@ a:hover, a:visited, a:link, a:active {
     padding-bottom: 25px;
 }
 
-.hp-up{
+.{
     padding-top: 20px;
 }
 
@@ -47,6 +47,10 @@ a:hover, a:visited, a:link, a:active {
 
 .lp-down{
     padding-bottom: 5px;
+}
+
+.lm-up{
+    margin-top: 8px
 }
 
 .btn-primary{
@@ -82,3 +86,5 @@ a:hover, a:visited, a:link, a:active {
 .big-text{
     font-size: 16px
 }
+
+hr{margin-top:0rem;}
