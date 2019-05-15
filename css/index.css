@@ -79,7 +79,6 @@ a:hover, a:visited, a:link, a:active {
 
 .column-scroll{
     border-left: 1px solid rgba(0,0,0,.1);
-    border-right: 1px grey solid; 
     overflow:scroll; height:50rem;
 }
 
