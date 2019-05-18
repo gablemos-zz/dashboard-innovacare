@@ -41,6 +41,10 @@ a:hover, a:visited, a:link, a:active {
     padding-bottom: 20px;
 }
 
+.mp-up{
+    padding-top: 10px;
+}
+
 .lp-up{
     padding-top: 5px;
 }
@@ -84,6 +88,10 @@ a:hover, a:visited, a:link, a:active {
 
 .big-text{
     font-size: 16px
+}
+
+.mid-text{
+    font-size: 14px
 }
 
 hr{margin-top:0rem;}
