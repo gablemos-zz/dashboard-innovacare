@@ -25,6 +25,10 @@ a:hover, a:visited, a:link, a:active {
     border: 1px solid rgb(230, 230, 230);
 }
 
+.np{
+    padding: unset;
+}
+
 .agp-up{
     padding-top: 25px;
 }
@@ -33,7 +37,7 @@ a:hover, a:visited, a:link, a:active {
     padding-bottom: 25px;
 }
 
-.{
+.hp-up{
     padding-top: 20px;
 }
 
