@@ -1,6 +1,6 @@
 'use strict';
 
-var DEFAULT_COLORS = ['#8E5EA2', '#FF4A60', '#FF9E5E', '#696969', '#C0C0C0'];
+var DEFAULT_COLORS = ['#8E5EA2', '#FF4A60', '#FF9E5E', '#696969', '#97c596'];
 
 var ctx = document.getElementById('sintomas-chart').getContext('2d');
 new Chart(ctx, {
