@@ -44,7 +44,7 @@
   
   <!-- End of Topbar -->
   <nav class="menu-navigation-icons navbar navbar-expand navbar-light bg-white mb-4 static-top shadow bd-exemple">
-      <a href="#" class="menu-blue" style="width: 55px;"><i class="fas fa-question"></i></a>
+      <a href="#" class="menu-grey" style="width: 55px;" data-toggle="modal" data-target="#modal-help"><i class="fas fa-question"></i></a>
       <a href="#" class="menu-red"><i class="fas fa-file-alt"></i><span>Protocolo</span></a>
       <a href="#" class="menu-red"><i class="fas fa-comment-alt"></i><span>Chat</span></a>
       <a href="#" class="menu-red" data-toggle="modal" data-target="#modal-chamada"><i class="fas fa-phone-volume"></i><span id="menu-chamada">Chamadas(0)</span></a>
@@ -237,7 +237,7 @@
   <!-- Fim Gráfico Inferior -->
 
 
-  <!-- Modal -->
+  <!-- Modal chamada-->
   <div class="modal fade bd-example-modal-lg" id="modal-chamada">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -316,6 +316,40 @@
     </div>
   </div>
   <!-- Fim Modal -->
+
+  <!-- Modal Help-->
+  <div class="modal fade bd-example-modal-md" id="modal-help">
+      <div class="modal-dialog modal-md">
+        <div class="modal-content">
+        
+          <!-- Modal Header -->
+          <div class="modal-header bg-gradient-info text-gray-100">
+            <h4 class="modal-title">Fale Conosco</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          
+          <!-- Modal body -->
+          <div class="modal-body">
+            <!-- DataTale -->
+            <div class="card shadow mb-4">
+              <div class="card-body text-center">
+                <p class="text-uppercase text-lg">Em caso de dúvida ou sugestão.<br>Entre em contato conosco</p>
+                <br>
+                <p class="text-xs">(12) 39XX-XXXX</p>
+                <p class="text-xs">contato@innovecare.com.br</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <!-- Fim Modal -->
 
   
   <!-- Scripts -->

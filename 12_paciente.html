@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Innovecare</title>
+
+  <!-- Fonts-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+
+  <!-- Style-->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css">
+  <link rel="stylesheet" type="text/css" href="css/sb-admin-2.min.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="css/slicknav.min.css">
+  <link rel="stylesheet" type="text/css" href="css/navigation.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap4.min.css">
+
+
+  <!-- JavaScript-->
+  <script src="js/Chart.min.js"></script>
+  <script src="js/chartjs-plugin-doughnutlabel.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/jquery.fittext.js"></script>
+  <script src="js/sb-admin-2.min.js"></script>
+  <script src="js/jquery.slicknav.min.js"></script>
+</head>
+
+<body id="page-top" class=" bg-gray-100">
+
+
+  <!-- Topbar -->
+  <nav class="menu-navigation-icons navbar navbar-expand navbar-light bg-white mb-4 static-top shadow bd-exemple">
+    <a href="#" class="menu-grey" style="width: 55px;"><i class="fas fa-question"></i></a>
+    <a href="#" class="menu-blue"><i class="fas fa-file-alt"></i><span>Protocolo</span></a>
+    <a href="#" class="menu-black"><i class="fas fa-comment-alt"></i><span>Chat</span></a>
+    <a href="#" class="menu-red" data-toggle="modal" data-target="#modal-chamada"><i
+        class="fas fa-phone-volume"></i><span id="menu-chamada">Chamadas(0)</span></a>
+    <a href="#" class="menu-grey"><i class="fas fa-chart-line"></i><span>Dashboard</span></a>
+    <a href="#" class="menu-grey"><i class="fas fa-calendar-alt"></i><span>Agenda</span></a>
+    <a href="#" class="menu-grey"><i class="fas fa-user-injured"></i><span>Pacientes</span></a>
+    <a href="#" class="menu-grey"><i class="fas fa-user-md"></i><span id="menu-equipe">Equipe Multidiciplinar</span></a>
+    <a href="#" class="menu-grey"><i class="fas fa-hospital"></i><span>Planos de Saúde</span></a>
+    <a href="#" class="menu-grey"><i class="fas fa-capsules"></i><span>Medicamentos</span></a>
+    <a href="#" class="menu-grey"><i class="fas fa-user-circle"></i><span
+        id="menu-email">teste@innovecare.com.br</span></a>
+    <a href="#" class="menu-grey" style="width: 55px;"><i class="fas fa-sign-out-alt"></i></a>
+  </nav>
+  <!-- End of Topbar -->
+
+  <!-- Central -->
+  <div class="container-fluid text-center">
+    <div class="clearfix clear-fix mb-3">
+      <div class="float-left">
+        <div class="media">
+          <i class="fas  fa-users mr-3 fa-fw fa-3x text-muted align-self-center "></i>
+
+          <div class="media-body">
+            <h2 class="title mt-0 mb-0">ciclano teste 3</h2>
+            <span class="text-muted"></span>
+          </div>
+        </div>
+      </div>
+      <span class="float-right d-print-none">
+        <div class="clearfix row">
+          <div class="col"><a class="btn btn-link" href="/pacientes">Voltar</a></div>
+          <div class="col-auto"><a class="btn btn-danger pull-right" href="/pacientes/Delete/151">Excluir</a></div>
+          <div class="col-auto"><a class="btn btn-primary pull-right" href="/pacientes/Edit/151">Editar</a></div>
+        </div>
+      </span>
+    </div>
+    <hr>
+
+    <div class="row">
+      <div class="col-xl-6 col-md-6 mb-4">
+        <div class="row ">
+            <div class="col-xl-12 col-md-12 mb-4">
+                <h4>Informações do Paciente</h4>
+              </div>
+          <div class="col-xl-6 col-md-6 mb-4">
+            <span>Nome:</span>
+            <br>
+            <span>Adilson Mauro de Siqueira</span>
+          </div>
+          <div class="col-xl-6 col-md-6 mb-4">
+            <span>E-mail:</span>
+            <br>
+            <a href="#">mienf_felx@hotmail.com</a>
+          </div>
+
+          <div class="col-xl-6 col-md-6 mb-4">
+            <span>CPF:</span>
+            <br>
+            <span>050.246.888-21</span>
+          </div>
+          <div class="col-xl-6 col-md-6 mb-4">
+            <span>RG:</span>
+            <br>
+            <span>167175294</span>
+          </div>
+
+          <div class="col-xl-6 col-md-6 mb-4">
+            <span>Data de Nascimento:</span>
+            <br>
+            <span>12/05/2019</span>
+          </div>
+
+
+          <div class="col-xl-6 col-md-6 mb-4">
+            <span>Número do Prontuário:</span>
+            <br>
+            <span>359-18</span>
+          </div>
+
+          <div class="col-xl-6 col-md-6 mb-4">
+            <span>Observações do Paciente:</span>
+            <br>
+            <span>-</span>
+          </div>
+          <div class="col-xl-6 col-md-6 mb-4">
+            <span>Status do Paciente:</span>
+            <br>
+            <span>-</span>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-xl-12 col-md-12 mb-4">
+                <h4>Plano de Saúde</h4>
+              </div>
+          <div class="col-xl-6 col-md-6 mb-4">
+            <span>Código do Plano:</span>
+            <br>
+            <span>772949001821014</span>
+          </div>
+
+          <div class="col-xl-6 col-md-6 mb-4">
+            <span>Plano de Saúde:</span>
+            <br>
+            <span>-</span>
+          </div>   
+        </div>       
+        <hr>
+        <div class="row">
+            <div class="col-xl-12 col-md-12 mb-4">
+                <h4>Contas Paciente</h4>
+              </div>
+          <div class="col-xl-4 col-md-4 mb-4">
+            <span class="big-text">Celular:</span>
+            <br>
+            <span>(xx)xxxxx-xxxx</span>
+          </div>
+          <div class="col-xl-4 col-md-4 mb-4">
+            <span class="big-text">Tel Residencial:</span>
+            <br>
+            <span class="big-text">(xx)xxxx-xxxx</span>
+          </div>
+          <div class="col-xl-4 col-md-4 mb-4">
+            <span class="big-text">Tel Comercial:</span>
+            <br>
+            <span class="big-text">(xx)xxxx-xxxx</span>
+          </div>
+        </div>
+        <hr>
+
+        <div class="row">
+          <div class="col-xl-12 col-md-12 mb-4">
+            <h4>Contato de Emergência</h4>
+          </div>
+          <div class="col-xl-4 col-md-4 mb-4">
+            <span class="big-text">Nome Contato:</span>
+            <br>
+            <span class="big-text">-</span>
+          </div>
+          <div class="col-xl-4 col-md-4 mb-4">
+            <span class="big-text">Parentesco:</span>
+            <br>
+            <span class="big-text">-</span>
+          </div>
+          <div class="col-xl-4 col-md-4 mb-4">
+            <span class="big-text">Celular do Contato:</span>
+            <br>
+            <span class="big-text">-</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-xl-3 col-md-3 mb-4">
+        <div class="row column-scroll">
+
+          <div class="col">
+            <div>
+              <div class="hp-up hp-down">
+                <label for="PacienteMedicamentoAlergia">Plano Terapêutico</label>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <a href="/PlanosTerap%C3%AAuticos/create?parentid=151">
+                      Iniciar Plano Terapêutico de Dor
+                    </a></li>
+                </ul>
+              </div>
+              <div><a class="no-color" href="/PlanosTerap%C3%AAuticos/details/172">
+                  <div class="media">
+                    <span class="mr-3 align-self-center"><i class="fas fa-2x text-muted fa-fw fa-list-alt"></i></span>
+                    <div class="media-body">
+                      <h5 class="my-0">Dor <span class="ml-2">
+                          <span class="badge badge-success">Em Andamento</span>
+                        </span> <span class="badge badge-secondary">09/05/2019</span></h5>
+                      <div class="">
+                        CID: 11111, Fulano teste 3
+                      </div>
+                    </div>
+                  </div>
+                </a></div>
+              <hr>
+              <div><a class="no-color" href="/PlanosTerap%C3%AAuticos/details/176">
+                  <div class="media">
+                    <span class="mr-3 align-self-center"><i class="fas fa-2x text-muted fa-fw fa-list-alt"></i></span>
+                    <div class="media-body">
+                      <h5 class="my-0">Dor <span class="ml-2">
+                          <span class="badge badge-success">Em Andamento</span>
+                        </span> <span class="badge badge-secondary">09/05/2019</span></h5>
+                      <div class="">
+                        CID: 0905, JOÃO DA SILVA
+                      </div>
+                    </div>
+                  </div>
+                </a></div>
+              <hr>
+              <div><a class="no-color" href="/PlanosTerap%C3%AAuticos/details/176">
+                  <div class="media">
+                    <span class="mr-3 align-self-center"><i class="fas fa-2x text-muted fa-fw fa-list-alt"></i></span>
+                    <div class="media-body">
+                      <h5 class="my-0">Dor <span class="ml-2">
+                          <span class="badge badge-success">Em Andamento</span>
+                        </span> <span class="badge badge-secondary">09/05/2019</span></h5>
+                      <div class="">
+                        CID: 0905, JOÃO DA SILVA
+                      </div>
+                    </div>
+                  </div>
+                </a></div>
+              <hr>
+              <div><a class="no-color" href="/PlanosTerap%C3%AAuticos/details/176">
+                  <div class="media">
+                    <span class="mr-3 align-self-center"><i class="fas fa-2x text-muted fa-fw fa-list-alt"></i></span>
+                    <div class="media-body">
+                      <h5 class="my-0">Dor <span class="ml-2">
+                          <span class="badge badge-success">Em Andamento</span>
+                        </span> <span class="badge badge-secondary">09/05/2019</span></h5>
+                      <div class="">
+                        CID: 0905, JOÃO DA SILVA
+                      </div>
+                    </div>
+                  </div>
+                </a></div>
+              <hr>
+              <div><a class="no-color" href="/PlanosTerap%C3%AAuticos/details/176">
+                  <div class="media">
+                    <span class="mr-3 align-self-center"><i class="fas fa-2x text-muted fa-fw fa-list-alt"></i></span>
+                    <div class="media-body">
+                      <h5 class="my-0">Dor <span class="ml-2">
+                          <span class="badge badge-success">Em Andamento</span>
+                        </span> <span class="badge badge-secondary">09/05/2019</span></h5>
+                      <div class="">
+                        CID: 0905, JOÃO DA SILVA
+                      </div>
+                    </div>
+                  </div>
+                </a></div>
+              <hr>
+              <div><a class="no-color" href="/PlanosTerap%C3%AAuticos/details/176">
+                  <div class="media">
+                    <span class="mr-3 align-self-center"><i class="fas fa-2x text-muted fa-fw fa-list-alt"></i></span>
+                    <div class="media-body">
+                      <h5 class="my-0">Dor <span class="ml-2">
+                          <span class="badge badge-success">Em Andamento</span>
+                        </span> <span class="badge badge-secondary">09/05/2019</span></h5>
+                      <div class="">
+                        CID: 0905, JOÃO DA SILVA
+                      </div>
+                    </div>
+                  </div>
+                </a></div>
+              <hr>
+              <div>
+                <a class="no-color" href="/PlanosTerap%C3%AAuticos/details/162">
+                  <div class="media">
+                    <span class="mr-3 align-self-center"><i class="fas fa-2x text-muted fa-fw fa-list-alt"></i></span>
+                    <div class="media-body">
+                      <h5 class="my-0">Dor <span class="ml-2">
+                          <span class="badge badge-success">Em Andamento</span>
+                        </span> <span class="badge badge-secondary">07/05/2019</span></h5>
+                      <div class="">
+                        CID: r, JOÃO DA SILVA
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-md-3 mb-4">
+        <div>
+          <label for="PacienteMedicamentoAlergia">Alergia a medicamentos</label>
+          <ul class="list-group">
+            <li class="list-group-item">Cetoprofeno</li>
+            <li class="list-group-item">Trometanol</li>
+          </ul>
+        </div>
+        <br>
+        <div class="col-auto"><a class="btn btn-primary" href="/pacientes/Edit/151">Editar</a></div>
+
+      </div>
+    </div>
+    <hr>
+
+    <div class="clearfix clear-fix mb-3">
+      <div class="float-left">
+        <div class="media">
+          <div class="media-body">
+            <div class="col"><a class="btn btn-link" href="/pacientes">Voltar</a></div>
+            <span class="text-muted"></span>
+          </div>
+        </div>
+      </div>
+      <span class="float-right d-print-none">
+        <div class="clearfix row">
+
+          <div class="col-auto"><a class="btn btn-danger pull-right" href="/pacientes/Delete/151">Excluir</a></div>
+          <div class="col-auto"><a class="btn btn-primary pull-right" href="/pacientes/Edit/151">Editar</a></div>
+        </div>
+      </span>
+    </div>
+  </div>
+  <!-- Fim Central -->
+
+
+
+  <!-- Modal -->
+  <div class="modal fade bd-example-modal-lg" id="modal-chamada">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Chamadas</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <!-- DataTale -->
+          <div class="card shadow mb-4">
+            <div class="card-body">
+              <div class="table-responsive">
+                <table id="datatable" class="table table-bordered" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Telefone</th>
+                      <th>Data</th>
+                      <th>Confirmar</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Tiger Nixon</td>
+                      <td>(61)91234-1234</td>
+                      <td>2011/04/25</td>
+                      <td class="text-center"><button class="btn btn-success">Atendido</button></td>
+                    </tr>
+                    <tr>
+                      <td>Garrett Winters</td>
+                      <td>(63)91234-1234</td>
+                      <td>2011/07/25</td>
+                      <td class="text-center"><button class="btn btn-success">Atendido</button></td>
+                    </tr>
+                    <tr>
+                      <td>Ashton Cox</td>
+                      <td>(66)91234-1234</td>
+                      <td>2009/01/12</td>
+                      <td class="text-center"><button class="btn btn-success">Atendido</button></td>
+                    </tr>
+                    <tr>
+                      <td>Cedric Kelly</td>
+                      <td>(22)91234-1234</td>
+                      <td>2012/03/29</td>
+                      <td class="text-center"><button class="btn btn-success">Atendido</button></td>
+                    </tr>
+                    <tr>
+                      <td>Airi Satou</td>
+                      <td>(33)91234-1345</td>
+                      <td>2008/11/28</td>
+                      <td class="text-center"><button class="btn btn-success">Atendido</button></td>
+                    </tr>
+                    <tr>
+                      <td>Brielle Williamson</td>
+                      <td>(61)91234-134</td>
+                      <td>2012/12/02</td>
+                      <td class="text-center"><button class="btn btn-success">Atendido</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- Fim Modal -->
+
+
+  <!-- Scripts -->
+  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/chart.js"></script>
+  <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
+  <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+</body>
+
+</html>
