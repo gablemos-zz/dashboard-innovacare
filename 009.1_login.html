@@ -1,0 +1,61 @@
+<div class="content">
+    <div class="container">
+        <div class="col-md-4 col-sm-6 ml-auto mr-auto">
+            <form class="form" method="post" action="/Account/Login?returnurl=%2F">
+                <div class="card card-login">
+                    <div class="card-header ">
+                        <h3 class="header text-center">Entrar</h3>
+                    </div>
+                    <div class="card-body ">
+                        <div class="card-body">
+                            <div class="text-center">
+                                <img src="/images/LOGO InnoveCare.png" class="img-fluid">
+                            </div>
+                            <div class="text-danger validation-summary-valid" data-valmsg-summary="true">
+                                <ul>
+                                    <li style="display:none"></li>
+                                </ul>
+                            </div>
+                            <div class="form-group">
+                                <label for="Email">Email</label>
+                                <input placeholder="Digite seu email" class="form-control" type="email" data-val="true"
+                                    data-val-email="The Email field is not a valid e-mail address."
+                                    data-val-required="The Email field is required." id="Email" name="Email" value="">
+                                <span class="text-danger field-validation-valid" data-valmsg-for="Email"
+                                    data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="Password">Password</label>
+                                <input class="form-control" type="password" data-val="true"
+                                    data-val-required="The Password field is required." id="Password" name="Password">
+                                <span placeholder="Password" class="text-danger field-validation-valid"
+                                    data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <label class="form-check-label" for="RememberMe">
+                                        <input class="form-check-input" type="checkbox" checked="" data-val="true"
+                                            data-val-required="The Remember me? field is required." id="RememberMe"
+                                            name="RememberMe" value="true">
+                                        <span class="form-check-sign"></span> Lembrar
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p><a href="/Account/ForgotPassword">Esqueceu sua senha?</a></p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" class="btn btn-primary btn-wd">Entrar</button>
+                            <a class="mid-text mp-up" href="/Call">Não tenho Senha</a>
+                        </div>
+                    </div>
+
+                </div>
+                <input name="__RequestVerificationToken" type="hidden"
+                    value="CfDJ8Al8a-l-p61HonwKcqvPaJ2a9FTuo1STpEdqeqoafoA45h2cTdmLD_UyFykth4356e4ZImm0n-2VvB40Nj4N4d_pBw_0J0LNeI5wQtoVj7Ms-uP4eFnOA743JmEUlORuILbDB45iuFurz0JwjBV-vfMmrjm67DLshwbt3RwCySScdKKDXL7bwATz53sZxEoSxA"><input
+                    name="RememberMe" type="hidden" value="false">
+            </form>
+        </div>
+    </div>
+</div>
