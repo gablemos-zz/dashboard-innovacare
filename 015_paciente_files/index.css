@@ -1,0 +1,113 @@
+a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+}
+
+.bd-exemple {
+    width: 100%;
+    size: auto;
+}
+
+    .bd-exemple .btn:not(:first-child):not(:last-child) {
+        width: 10%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+.first-last {
+    height: 62px;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.bd-exemple .btn {
+    border: 1px solid rgb(230, 230, 230);
+}
+
+.border-invisible {
+    border: 1px solid rgb(230, 230, 230);
+}
+
+.np {
+    padding: unset;
+}
+
+.agp-up {
+    padding-top: 25px;
+}
+
+.agp-down {
+    padding-bottom: 25px;
+}
+
+.hp-up {
+    padding-top: 20px;
+}
+
+.hp-down {
+    padding-bottom: 20px;
+}
+
+.mp-up {
+    padding-top: 10px;
+}
+
+.lp-up {
+    padding-top: 5px;
+}
+
+.lp-down {
+    padding-bottom: 5px;
+}
+
+.lm-up {
+    margin-top: 8px
+}
+
+.btn-primary {
+    background-color: #229AD4;
+}
+
+.btn-danger {
+    background-color: #FF4A60
+}
+
+.btn-bigger {
+    padding-top: 5%;
+    padding-bottom: 25px;
+    height: 102px;
+}
+
+.gradient {
+    background-image: radial-gradient(white, #229AD4);
+    color: grey;
+}
+
+    .gradient:hover {
+        color: black;
+        background-image: radial-gradient(white, rgb(28, 128, 179));
+    }
+
+.column-scroll {
+    border-left: 1px solid rgba(0,0,0,.1);
+    overflow: scroll;
+    height: 50rem;
+}
+
+.big-text {
+    font-size: 16px
+}
+
+.mid-text {
+    font-size: 14px
+}
+
+hr {
+    margin-top: 0rem;
+}
+
+body {
+    font-family: Nunito !important;    
+}

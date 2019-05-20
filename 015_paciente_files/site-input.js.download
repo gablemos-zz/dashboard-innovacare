@@ -1,0 +1,26 @@
+﻿jQuery.fn.addAddon = function (text, after) {
+    for (var i = 0; i < this.length; i++) {
+        $(this[i]).wrap('<div class="input-group"></div>');
+        var addon = '<div class="input-group-prepend"><span class="input-group-text">' + text + '</span></div>';
+        if (after) $(addon).insertAfter($(this[i]));
+        else $(addon).insertBefore($(this[i]));
+    }
+    return this;
+};
+
+jQuery.fn.toLocalDate = function () {
+    for (var i = 0; i < this.length; i++) {
+        var e = $(this[i])
+        e.attr("type", "text");
+        e.addClass("date");
+        e.attr("value",e.attr("value").split("-").reverse().join("/"));
+    }
+    return this;
+};
+
+$(":not(.input-group) > input.currency").addAddon("R$")
+$(":not(.input-group) > input.percent").addAddon("%", true)
+$(":not(.input-group) > input.hours").addAddon("h", true)
+$("input[type='date']").toLocalDate();
+$("input[type='text']").attr("autocomplete", "off");
+
