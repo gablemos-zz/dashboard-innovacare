@@ -98,6 +98,12 @@ a:hover, a:visited, a:link, a:active {
     font-size: 14px
 }
 
+.error{
+    color:red;
+    font-family:verdana, Helvetica;
+    font-size: 10px;
+}
+
 hr{
     margin-top:0rem;
 }
