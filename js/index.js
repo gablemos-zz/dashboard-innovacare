@@ -71,6 +71,11 @@ $(document).ready(function() {
     } );
   } );
 
+  $(function(){
+    $("#PlanoTEncaminhadoPS0").prop("checked", false);
+    $("#PlanoTEncaminhadoPS1").prop("checked", false);
+  })
+
   $(function()
   {
     $('#form').validate(
